@@ -9,23 +9,30 @@
 // MENU MOBILE
 // ===============================
 
+
 const menu = document.querySelector(".menu-mobile");
 const nav = document.querySelector("nav");
 
 
-if(menu){
+if(menu && nav){
+
 
     menu.addEventListener("click",()=>{
 
+
         nav.classList.toggle("active");
 
+
     });
+
+
 
 }
 
 
 
-// Fecha menu ao clicar em um link
+// Fecha menu ao clicar nos links
+
 
 document.querySelectorAll("nav a").forEach(link=>{
 
@@ -49,6 +56,35 @@ document.querySelectorAll("nav a").forEach(link=>{
 
 
 
+
+// Fecha menu clicando fora
+
+
+document.addEventListener("click",(e)=>{
+
+
+    if(
+        nav &&
+        menu &&
+        !nav.contains(e.target) &&
+        !menu.contains(e.target)
+
+    ){
+
+        nav.classList.remove("active");
+
+    }
+
+
+});
+
+
+
+
+
+
+
+
 // ===============================
 // COPIAR PIX
 // ===============================
@@ -57,31 +93,33 @@ document.querySelectorAll("nav a").forEach(link=>{
 function copiarPix(){
 
 
-    const chave = "projetav393@gmail.com";
+const chave = "projetav393@gmail.com";
 
 
-    navigator.clipboard.writeText(chave)
 
-    .then(()=>{
+navigator.clipboard.writeText(chave)
 
-
-        mostrarMensagem(
-            "✅ Chave PIX copiada!<br>Obrigado por apoiar o projeto ❤️"
-        );
+.then(()=>{
 
 
-    })
+mostrarMensagem(
+"✅ PIX copiado!<br>Obrigado por apoiar o Vida & IA ❤️"
+);
 
 
-    .catch(()=>{
+
+})
+
+.catch(()=>{
 
 
-        mostrarMensagem(
-            "⚠️ Não foi possível copiar. Copie manualmente: "+chave
-        );
+mostrarMensagem(
+"⚠️ Copie manualmente:<br>"+chave
+);
 
 
-    });
+
+});
 
 
 }
@@ -90,50 +128,58 @@ function copiarPix(){
 
 
 
+
 // ===============================
-// MENSAGEM PERSONALIZADA
+// ALERTA PIX
 // ===============================
 
 
 function mostrarMensagem(texto){
 
 
-    let mensagem = document.getElementById("mensagemPix");
+let mensagem =
+document.getElementById("mensagemPix");
 
 
 
-    if(!mensagem){
+if(!mensagem){
 
 
-        mensagem = document.createElement("div");
-
-        mensagem.id="mensagemPix";
-
-        document.body.appendChild(mensagem);
+mensagem =
+document.createElement("div");
 
 
-    }
+mensagem.id="mensagemPix";
 
 
+document.body.appendChild(mensagem);
 
-    mensagem.innerHTML = texto;
 
-
-    mensagem.classList.add("mostrar");
+}
 
 
 
-    setTimeout(()=>{
+
+mensagem.innerHTML = texto;
 
 
-        mensagem.classList.remove("mostrar");
+mensagem.classList.add("mostrar");
 
 
-    },4000);
+
+setTimeout(()=>{
+
+
+mensagem.classList.remove("mostrar");
+
+
+},4000);
 
 
 
 }
+
+
 
 
 
@@ -146,40 +192,54 @@ function mostrarMensagem(texto){
 // ===============================
 
 
-document.querySelectorAll('a[href^="#"]').forEach(link=>{
+document.querySelectorAll(
+'a[href^="#"]'
+)
+.forEach(link=>{
 
 
-    link.addEventListener("click",function(e){
+link.addEventListener(
+"click",
+function(e){
 
 
-        e.preventDefault();
-
-
-
-        const destino = document.querySelector(
-            this.getAttribute("href")
-        );
-
-
-
-        if(destino){
-
-
-            destino.scrollIntoView({
-
-                behavior:"smooth"
-
-            });
-
-
-        }
+const id =
+this.getAttribute("href");
 
 
 
-    });
+if(id === "#") return;
+
+
+
+const destino =
+document.querySelector(id);
+
+
+
+if(destino){
+
+
+e.preventDefault();
+
+
+destino.scrollIntoView({
+
+behavior:"smooth"
+
+});
+
+
+}
+
 
 
 });
+
+
+});
+
+
 
 
 
@@ -192,39 +252,43 @@ document.querySelectorAll('a[href^="#"]').forEach(link=>{
 // ===============================
 
 
-const header = document.querySelector("header");
+const header =
+document.querySelector("header");
 
 
 
-window.addEventListener("scroll",()=>{
+window.addEventListener(
+"scroll",
+()=>{
 
 
-    if(!header) return;
+if(!header) return;
 
 
 
-    if(window.scrollY > 80){
+if(window.scrollY > 80){
 
 
-        header.style.background =
-        "rgba(7,17,31,.95)";
+header.style.background =
+"rgba(7,17,31,.95)";
 
 
-    }
+}
+
+else{
 
 
-    else{
+header.style.background =
+"rgba(7,17,31,.75)";
 
 
-        header.style.background =
-        "rgba(7,17,31,.75)";
-
-
-    }
+}
 
 
 
 });
+
+
 
 
 
@@ -237,62 +301,55 @@ window.addEventListener("scroll",()=>{
 // ===============================
 
 
-const elementos = document.querySelectorAll("section");
+
+const secoes =
+document.querySelectorAll("section");
 
 
 
-elementos.forEach(sec=>{
+const observer =
+new IntersectionObserver(
+
+(entries)=>{
 
 
-    sec.style.opacity="0";
-
-    sec.style.transform="translateY(40px)";
-
-    sec.style.transition="all .8s ease";
+entries.forEach(entry=>{
 
 
-});
+if(entry.isIntersecting){
 
 
-
-
-
-function aparecer(){
-
-
-    elementos.forEach(sec=>{
-
-
-        const topo =
-        sec.getBoundingClientRect().top;
-
-
-
-        if(topo < window.innerHeight - 120){
-
-
-            sec.style.opacity="1";
-
-            sec.style.transform="translateY(0)";
-
-
-        }
-
-
-
-    });
+entry.target.classList.add("mostrar");
 
 
 }
 
 
 
+});
 
-window.addEventListener(
-    "scroll",
-    aparecer
+
+},
+
+{
+
+threshold:0.15
+
+}
+
 );
 
 
 
-aparecer();
+
+
+secoes.forEach(sec=>{
+
+
+sec.classList.add("animar");
+
+
+observer.observe(sec);
+
+
+});
