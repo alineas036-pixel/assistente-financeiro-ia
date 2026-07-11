@@ -27,13 +27,17 @@ body{
 header{
 
     position:fixed;
+
     top:0;
+
     left:0;
 
     width:100%;
 
     display:flex;
+
     justify-content:space-between;
+
     align-items:center;
 
     padding:20px 8%;
@@ -49,9 +53,11 @@ header{
 }
 
 
+
 .logo{
 
     font-size:32px;
+
     font-weight:800;
 
 }
@@ -68,7 +74,8 @@ header{
 nav{
 
     display:flex;
-    gap:25px;
+
+    gap:30px;
 
 }
 
@@ -76,11 +83,12 @@ nav{
 nav a{
 
     color:white;
+
     text-decoration:none;
 
-    font-weight:500;
-
     transition:.3s;
+
+    font-weight:500;
 
 }
 
@@ -93,8 +101,7 @@ nav a:hover{
 
 
 
-.btnPesquisa,
-.principal{
+.btnPesquisa{
 
     background:#2563eb;
 
@@ -102,7 +109,7 @@ nav a:hover{
 
     text-decoration:none;
 
-    padding:14px 28px;
+    padding:14px 26px;
 
     border-radius:12px;
 
@@ -111,16 +118,15 @@ nav a:hover{
 }
 
 
-
-.btnPesquisa:hover,
-.principal:hover{
+.btnPesquisa:hover{
 
     background:#1d4ed8;
 
 }
 
 
-/* MENU MOBILE */
+
+/* BOTÃO MOBILE */
 
 
 .menu-mobile{
@@ -154,11 +160,12 @@ nav a:hover{
 
     justify-content:space-between;
 
-    gap:50px;
+    gap:70px;
 
-    padding:160px 8% 80px;
+    padding:160px 8% 100px;
 
 }
+
 
 
 .hero-text{
@@ -166,6 +173,7 @@ nav a:hover{
     flex:1;
 
 }
+
 
 
 .hero-text h1{
@@ -188,7 +196,7 @@ nav a:hover{
 
     line-height:1.8;
 
-    margin-bottom:35px;
+    margin-bottom:40px;
 
 }
 
@@ -206,6 +214,24 @@ nav a:hover{
 
 
 
+.principal{
+
+    background:#2563eb;
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:18px 35px;
+
+    border-radius:15px;
+
+    font-weight:600;
+
+}
+
+
+
 .secundario{
 
     border:2px solid #38bdf8;
@@ -214,14 +240,15 @@ nav a:hover{
 
     text-decoration:none;
 
-    padding:16px 30px;
+    padding:18px 35px;
 
     border-radius:15px;
 
 }
 
 
-/* ================= GLASS CARD ================= */
+
+/* ================= CARD GLASS ================= */
 
 
 .hero-card{
@@ -233,6 +260,7 @@ nav a:hover{
     justify-content:center;
 
 }
+
 
 
 .glass{
@@ -254,6 +282,28 @@ nav a:hover{
 }
 
 
+
+.glass h2{
+
+    margin-bottom:20px;
+
+}
+
+
+.glass hr{
+
+    border:none;
+
+    height:1px;
+
+    background:rgba(255,255,255,.08);
+
+    margin:20px 0;
+
+}
+
+
+
 .glass p{
 
     margin:12px 0;
@@ -263,7 +313,9 @@ nav a:hover{
 }
 
 
-/* ================= SEÇÕES ================= */
+
+
+/* ================= SECTIONS ================= */
 
 
 section{
@@ -276,20 +328,24 @@ section{
 
 section h2{
 
-    font-size:clamp(30px,4vw,42px);
+    font-size:42px;
 
     margin-bottom:25px;
 
 }
 
 
+
 section p{
+
+    font-size:18px;
 
     color:#cbd5e1;
 
     line-height:1.8;
 
 }
+
 
 
 
@@ -300,7 +356,7 @@ section p{
 
     display:grid;
 
-    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 
     gap:30px;
 
@@ -348,47 +404,32 @@ section p{
 
 
 
-/* ================= BONUS ================= */
+.card h3{
 
-
-.bonus{
-
-    margin-top:35px;
-
-    max-width:600px;
-
-    background:#0f172a;
-
-    border:1px solid rgba(56,189,248,.2);
-
-    padding:35px;
-
-    border-radius:20px;
+    font-size:22px;
 
 }
 
 
-.bonus h3{
 
-    font-size:25px;
-
-    margin-bottom:20px;
-
-}
+/* ================= ROADMAP ================= */
 
 
-.bonus ul{
-
-    margin-top:20px;
+#roadmap ul{
 
     list-style:none;
 
+    margin-top:35px;
+
 }
 
 
-.bonus li{
 
-    margin:15px 0;
+#roadmap li{
+
+    margin:20px 0;
+
+    font-size:22px;
 
 }
 
@@ -413,6 +454,14 @@ section p{
 
 
 
+.pix h3{
+
+    margin-bottom:15px;
+
+}
+
+
+
 .pix button{
 
     margin-top:20px;
@@ -428,6 +477,67 @@ section p{
     border-radius:12px;
 
     cursor:pointer;
+
+    font-size:16px;
+
+}
+
+
+.pix button:hover{
+
+    background:#059669;
+
+}
+
+
+
+
+/* ================= BONUS ================= */
+
+
+.bonus{
+
+    margin-top:35px;
+
+    max-width:600px;
+
+    background:#0f172a;
+
+    border:1px solid rgba(56,189,248,.25);
+
+    padding:35px;
+
+    border-radius:20px;
+
+}
+
+
+
+.bonus h3{
+
+    font-size:25px;
+
+    margin-bottom:20px;
+
+}
+
+
+
+.bonus ul{
+
+    list-style:none;
+
+    margin-top:20px;
+
+}
+
+
+
+.bonus li{
+
+    margin:15px 0;
+
+    color:#cbd5e1;
 
 }
 
@@ -450,6 +560,7 @@ footer{
 
 
 
+
 /* ================= TABLET ================= */
 
 
@@ -463,6 +574,7 @@ header{
 }
 
 
+
 .hero{
 
     flex-direction:column;
@@ -472,11 +584,13 @@ header{
 }
 
 
-.hero-card{
 
-    width:100%;
+.hero-text h1{
+
+    font-size:42px;
 
 }
+
 
 
 .glass{
@@ -498,11 +612,12 @@ header{
 }
 
 
+
+
 /* ================= CELULAR ================= */
 
 
 @media(max-width:650px){
-
 
 
 header{
@@ -518,6 +633,7 @@ header{
     display:block;
 
 }
+
 
 
 nav{
@@ -562,7 +678,15 @@ nav.active{
 
 .hero{
 
-    padding:130px 5% 60px;
+    padding:120px 5% 60px;
+
+}
+
+
+
+.hero-text h1{
+
+    font-size:34px;
 
 }
 
@@ -571,6 +695,14 @@ nav.active{
 .hero-text p{
 
     font-size:16px;
+
+}
+
+
+
+.botoes{
+
+    flex-direction:column;
 
 }
 
@@ -594,6 +726,30 @@ section{
 
 
 
+section h2{
+
+    font-size:30px;
+
+}
+
+
+
+section p{
+
+    font-size:16px;
+
+}
+
+
+
+.cards{
+
+    grid-template-columns:1fr;
+
+}
+
+
+
 .card{
 
     padding:25px;
@@ -602,6 +758,7 @@ section{
 
 
 
+.glass,
 .pix,
 .bonus{
 
