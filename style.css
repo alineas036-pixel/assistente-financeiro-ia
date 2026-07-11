@@ -859,3 +859,26 @@ grid-template-columns:1fr;
 
 
 }
+
+
+/* ================= ANIMAÇÃO SCROLL ================= */
+
+
+.animar{
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+    transition:.8s ease;
+
+}
+
+
+.mostrar{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
