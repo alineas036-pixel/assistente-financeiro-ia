@@ -1,3 +1,4 @@
+```css
 *{
     margin:0;
     padding:0;
@@ -5,9 +6,11 @@
     font-family:'Poppins',sans-serif;
 }
 
+
 html{
     scroll-behavior:smooth;
 }
+
 
 body{
 
@@ -17,13 +20,16 @@ body{
 
 }
 
+
 /* ================= HEADER ================= */
+
 
 header{
 
     position:fixed;
     top:0;
     left:0;
+
     width:100%;
 
     display:flex;
@@ -32,7 +38,7 @@ header{
 
     padding:20px 8%;
 
-    background:rgba(7,17,31,.75);
+    background:rgba(7,17,31,.85);
 
     backdrop-filter:blur(15px);
 
@@ -42,6 +48,7 @@ header{
 
 }
 
+
 .logo{
 
     font-size:32px;
@@ -49,26 +56,34 @@ header{
 
 }
 
+
 .logo span{
 
     color:#38bdf8;
 
 }
 
+
+
 nav{
 
     display:flex;
-    gap:30px;
+    gap:25px;
 
 }
+
 
 nav a{
 
     color:white;
     text-decoration:none;
+
+    font-weight:500;
+
     transition:.3s;
 
 }
+
 
 nav a:hover{
 
@@ -76,7 +91,10 @@ nav a:hover{
 
 }
 
-.btnPesquisa{
+
+
+.btnPesquisa,
+.principal{
 
     background:#2563eb;
 
@@ -84,7 +102,7 @@ nav a:hover{
 
     text-decoration:none;
 
-    padding:14px 26px;
+    padding:14px 28px;
 
     border-radius:12px;
 
@@ -92,13 +110,39 @@ nav a:hover{
 
 }
 
-.btnPesquisa:hover{
+
+
+.btnPesquisa:hover,
+.principal:hover{
 
     background:#1d4ed8;
 
 }
 
+
+/* MENU MOBILE */
+
+
+.menu-mobile{
+
+    display:none;
+
+    background:none;
+
+    border:none;
+
+    color:white;
+
+    font-size:30px;
+
+    cursor:pointer;
+
+}
+
+
+
 /* ================= HERO ================= */
+
 
 .hero{
 
@@ -110,11 +154,12 @@ nav a:hover{
 
     justify-content:space-between;
 
-    gap:70px;
+    gap:50px;
 
-    padding:160px 8% 100px;
+    padding:160px 8% 80px;
 
 }
+
 
 .hero-text{
 
@@ -122,15 +167,18 @@ nav a:hover{
 
 }
 
+
 .hero-text h1{
 
-    font-size:65px;
+    font-size:clamp(35px,5vw,65px);
 
     line-height:1.1;
 
     margin-bottom:25px;
 
 }
+
+
 
 .hero-text p{
 
@@ -140,9 +188,11 @@ nav a:hover{
 
     line-height:1.8;
 
-    margin-bottom:40px;
+    margin-bottom:35px;
 
 }
+
+
 
 .botoes{
 
@@ -154,21 +204,7 @@ nav a:hover{
 
 }
 
-.principal{
 
-    background:#2563eb;
-
-    color:white;
-
-    text-decoration:none;
-
-    padding:18px 35px;
-
-    border-radius:15px;
-
-    font-weight:600;
-
-}
 
 .secundario{
 
@@ -178,13 +214,15 @@ nav a:hover{
 
     text-decoration:none;
 
-    padding:18px 35px;
+    padding:16px 30px;
 
     border-radius:15px;
 
 }
 
-/* ================= CARD ================= */
+
+/* ================= GLASS CARD ================= */
+
 
 .hero-card{
 
@@ -195,6 +233,7 @@ nav a:hover{
     justify-content:center;
 
 }
+
 
 .glass{
 
@@ -214,23 +253,6 @@ nav a:hover{
 
 }
 
-.glass h2{
-
-    margin-bottom:20px;
-
-}
-
-.glass hr{
-
-    border:none;
-
-    height:1px;
-
-    background:rgba(255,255,255,.08);
-
-    margin:20px 0;
-
-}
 
 .glass p{
 
@@ -240,7 +262,9 @@ nav a:hover{
 
 }
 
-/* ================= SECTIONS ================= */
+
+/* ================= SEÇÕES ================= */
+
 
 section{
 
@@ -248,17 +272,18 @@ section{
 
 }
 
+
+
 section h2{
 
-    font-size:42px;
+    font-size:clamp(30px,4vw,42px);
 
     margin-bottom:25px;
 
 }
 
-section p{
 
-    font-size:18px;
+section p{
 
     color:#cbd5e1;
 
@@ -266,19 +291,24 @@ section p{
 
 }
 
+
+
 /* ================= CARDS ================= */
+
 
 .cards{
 
     display:grid;
 
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
 
     gap:30px;
 
     margin-top:40px;
 
 }
+
+
 
 .card{
 
@@ -294,6 +324,8 @@ section p{
 
 }
 
+
+
 .card:hover{
 
     transform:translateY(-8px);
@@ -301,6 +333,8 @@ section p{
     border-color:#38bdf8;
 
 }
+
+
 
 .card i{
 
@@ -312,31 +346,56 @@ section p{
 
 }
 
-.card h3{
 
-    font-size:22px;
 
-}
+/* ================= BONUS ================= */
 
-/* ================= ROADMAP ================= */
 
-#roadmap ul{
-
-    list-style:none;
+.bonus{
 
     margin-top:35px;
 
+    max-width:600px;
+
+    background:#0f172a;
+
+    border:1px solid rgba(56,189,248,.2);
+
+    padding:35px;
+
+    border-radius:20px;
+
 }
 
-#roadmap li{
 
-    margin:20px 0;
+.bonus h3{
 
-    font-size:22px;
+    font-size:25px;
+
+    margin-bottom:20px;
 
 }
+
+
+.bonus ul{
+
+    margin-top:20px;
+
+    list-style:none;
+
+}
+
+
+.bonus li{
+
+    margin:15px 0;
+
+}
+
+
 
 /* ================= PIX ================= */
+
 
 .pix{
 
@@ -352,11 +411,7 @@ section p{
 
 }
 
-.pix h3{
 
-    margin-bottom:15px;
-
-}
 
 .pix button{
 
@@ -374,17 +429,12 @@ section p{
 
     cursor:pointer;
 
-    font-size:16px;
-
 }
 
-.pix button:hover{
 
-    background:#059669;
-
-}
 
 /* ================= FOOTER ================= */
+
 
 footer{
 
@@ -398,50 +448,167 @@ footer{
 
 }
 
-/* ================= RESPONSIVO ================= */
+
+
+/* ================= TABLET ================= */
+
 
 @media(max-width:980px){
 
+
 header{
 
-flex-direction:column;
-
-gap:20px;
+    padding:20px 5%;
 
 }
 
-nav{
-
-flex-wrap:wrap;
-
-justify-content:center;
-
-}
 
 .hero{
 
-flex-direction:column;
+    flex-direction:column;
 
-text-align:center;
+    text-align:center;
+
+}
+
+
+.hero-card{
+
+    width:100%;
 
 }
 
-.hero-text h1{
-
-font-size:42px;
-
-}
 
 .glass{
 
-width:100%;
+    width:100%;
 
 }
+
+
 
 .botoes{
 
-justify-content:center;
+    justify-content:center;
 
 }
 
+
+
 }
+
+
+/* ================= CELULAR ================= */
+
+
+@media(max-width:650px){
+
+
+
+header{
+
+    flex-direction:row;
+
+}
+
+
+
+.menu-mobile{
+
+    display:block;
+
+}
+
+
+nav{
+
+    display:none;
+
+    position:absolute;
+
+    top:80px;
+
+    left:0;
+
+    width:100%;
+
+    background:#07111f;
+
+    flex-direction:column;
+
+    text-align:center;
+
+    padding:30px;
+
+}
+
+
+
+nav.active{
+
+    display:flex;
+
+}
+
+
+
+.btnPesquisa{
+
+    display:none;
+
+}
+
+
+
+.hero{
+
+    padding:130px 5% 60px;
+
+}
+
+
+
+.hero-text p{
+
+    font-size:16px;
+
+}
+
+
+
+.botoes a{
+
+    width:100%;
+
+    text-align:center;
+
+}
+
+
+
+section{
+
+    padding:70px 5%;
+
+}
+
+
+
+.card{
+
+    padding:25px;
+
+}
+
+
+
+.pix,
+.bonus{
+
+    padding:25px;
+
+}
+
+
+}
+```
